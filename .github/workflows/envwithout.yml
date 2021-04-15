@@ -1,0 +1,23 @@
+name: envwithout
+
+on:
+  workflow_dispatch:
+    inputs:
+      envName:
+env:
+  myenv: staging
+      
+      
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+  
+    environment: ${{ github.event.inputs.envName }}
+      
+    steps:
+    - run: echo "Deploy!"
+  build:
+    runs-on: ubuntu-latest
+    environment: ${{ env.myenv }}
+    steps:
+      - run: echo "Hi there"
