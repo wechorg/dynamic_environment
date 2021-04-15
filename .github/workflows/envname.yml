@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       envName:
+env:
+  myenv: staging
       
       
 jobs:
@@ -15,3 +17,9 @@ jobs:
       
     steps:
     - run: echo "Deploy!"
+  build:
+    runs-on: ubuntu-latest
+    environment: 
+      name: ${{ env.myenv }}
+    steps:
+      - run: echo "Hi there"
