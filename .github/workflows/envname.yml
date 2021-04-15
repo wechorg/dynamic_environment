@@ -17,9 +17,9 @@ jobs:
       
     steps:
     - run: echo "Deploy!"
-  build:
-    runs-on: ubuntu-latest
-    environment: 
-      name: ${{ env.myenv }}
-    steps:
-      - run: echo "Hi there"
+#   build:
+#     runs-on: ubuntu-latest
+#     environment: 
+#       name: ${{ env.myenv }}
+#     steps:
+#       - run: echo "Hi there"
